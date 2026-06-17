@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #0d1f1a;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom cursor */
+.cursor-ring-active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(18, 160, 110, 0.1);
+  border-color: rgba(18, 160, 110, 0.8);
+}
+
+/* Custom scrolling marquee ticker */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+/* Floating custom animations */
+@keyframes float-slow-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-25px) rotate(12deg) scale(1.08); }
+}
+
+@keyframes float-slow-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(25px) rotate(-12deg) scale(0.92); }
+}
+
+.animate-float-1 {
+  animation: float-slow-1 9s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-slow-2 8s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-slow-1 11s ease-in-out infinite;
+}
+
+.animate-float-4 {
+  animation: float-slow-2 10s ease-in-out infinite;
+}
